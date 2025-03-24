@@ -1,0 +1,16 @@
+school-website/
+├── index.html
+├── about.html
+├── gallery.html
+├── team.html
+├── download.html
+├── contact.html
+├── styles/
+│   ├── main.css
+│   └── animations.css
+├── scripts/
+│   └── main.js
+└── assets/
+    ├── images/
+    │   ├── logo.svg
+    │   ├── slide

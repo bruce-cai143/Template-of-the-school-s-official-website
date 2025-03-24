@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料下载 - 未来科技中学</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .download-section {
+            padding: 50px 0;
+        }
+        .download-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .download-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .download-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 15px;
+        }
+        .filter-btn {
+            padding: 8px 15px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn.active {
+            background: #4a6cf7;
+            color: white;
+        }
+        .download-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .download-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .download-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .download-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .download-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        .download-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        .download-actions {
+            text-align: right;
+        }
+        .no-files {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-container glass-effect">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.svg" alt="校徽" width="40">
+                <span>未来科技中学</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html">学校介绍</a>
+                <a href="gallery.html">图片墙</a>
+                <a href="team.html">师资团队</a>
+                <a href="download.html" class="active">资料下载</a>
+                <a href="contact.html">关于</a>
+            </div>
+            <button class="mobile-menu-btn button icon">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="download-section">
+            <div class="download-container">
+                <div class="download-header">
+                    <h1>资料下载</h1>
+                    <p>这里提供学校各类资料下载，包括教学资料、通知公告等</p>
+                </div>
+                
+                <div class="download-filters">
+                    <button class="filter-btn active" data-category="all">全部</button>
+                    <button class="filter-btn" data-category="教学资料">教学资料</button>
+                    <button class="filter-btn" data-category="通知公告">通知公告</button>
+                    <button class="filter-btn" data-category="学生作品">学生作品</button>
+                    <button class="filter-btn" data-category="其他">其他</button>
+                </div>
+                
+                <div class="download-list" id="downloadList">
+                    <div class="no-files">正在加载文件列表...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/images/logo.svg" alt="校徽" width="50">
+                <h3>未来科技中学</h3>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p>地址：科技大道100号</p>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：info@future-tech.edu</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <a href="index.html">首页</a>
+                    <a href="about.html">学校介绍</a>
+                    <a href="gallery.html">图片墙</a>
+                    <a href="team.html">师资团队</a>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">微信</a>
+                        <a href="#" class="social-icon">微博</a>
+                        <a href="#" class="social-icon">抖音</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 未来科技中学 版权所有</p>
+            
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 加载文件列表
+            loadFiles();
+            
+            // 分类过滤
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 更新按钮状态
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 过滤文件
+                    const category = this.getAttribute('data-category');
+                    filterFiles(category);
+                });
+            });
+            
+            // 移动端菜单
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+        
+        // 加载文件列表
+        async function loadFiles() {
+            const downloadList = document.getElementById('downloadList');
+            
+            try {
+                const response = await fetch('/api/files');
+                const data = await response.json();
+                
+                if (response.ok && data.files) {
+                    if (data.files.length === 0) {
+                        downloadList.innerHTML = '<div class="no-files">暂无可下载文件</div>';
+                        return;
+                    }
+                    
+                    // 保存文件列表到全局变量
+                    window.allFiles = data.files;
+                    
+                    // 显示所有文件
+                    renderFiles(data.files);
+                } else {
+                    downloadList.innerHTML = '<div class="no-files">加载文件列表失败</div>';
+                }
+            } catch (error) {
+                console.error('加载文件列表错误:', error);
+                downloadList.innerHTML = '<div class="no-files">加载文件列表失败，请检查网络连接</div>';
+            }
+        }
+        
+        // 渲染文件列表
+        function renderFiles(files) {
+            const downloadList = document.getElementById('downloadList');
+            
+            let html = '';
+            files.forEach(file => {
+                html += `
+                    <div class="download-item" data-category="${file.category}">
+                        <div class="download-title">${file.title}</div>
+                        <div class="download-description">${file.description || '无描述'}</div>
+                        <div class="download-meta">
+                            <span>分类: ${file.category}</span>
+                            <span>大小: ${formatFileSize(file.file_size)}</span>
+                        </div>
+                        <div class="download-meta">
+                            <span>下载次数: ${file.download_count || 0}</span>
+                            <span>上传时间: ${new Date(file.upload_date).toLocaleDateString()}</span>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/api/files/${file.id}/download" class="button" target="_blank">下载</a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            downloadList.innerHTML = html;
+        }
+        
+        // 过滤文件
+        function filterFiles(category) {
+            if (!window.allFiles) return;
+            
+            let filteredFiles;
+            if (category === 'all') {
+                filteredFiles = window.allFiles;
+            } else {
+                filteredFiles = window.allFiles.filter(file => file.category === category);
+            }
+            
+            if (filteredFiles.length === 0) {
+                document.getElementById('downloadList').innerHTML = `<div class="no-files">没有找到"${category}"分类的文件</div>`;
+            } else {
+                renderFiles(filteredFiles);
+            }
+        }

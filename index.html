@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 未来科技中学</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-container glass-effect">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.svg" alt="校徽" width="40"><img src="assets/images/logo.svg" alt="校徽" width="40"><img src="assets/images/logo.svg" alt="百人" width="40">
+                <span>未来科技中学</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">首页</a>
+                <a href="about.html">学校介绍</a>
+                <a href="gallery.html">图片墙</a>
+                <a href="team.html">师资团队</a>
+                <a href="download.html">资料下载</a>
+                <a href="contact.html">关于</a>
+                
+            </div>
+            <button class="mobile-menu-btn button icon">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 轮播图 -->
+        <section class="hero-section">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <div class="slide active" style="background-image: url('assets/images/slide1.jpg')">
+                        <div class="slide-content">
+                            <h2>创新教育领航者</h2>
+                            <p>培养面向未来的科技人才</p>
+                            <a href="about.html" class="button">了解更多</a>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('assets/images/slide2.jpg')">
+                        <div class="slide-content">
+                            <h2>智慧校园环境</h2>
+                            <p>科技与教育的完美融合</p>
+                            <a href="gallery.html" class="button outline">查看图集</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="control-btn button icon prev">‹</button>
+                    <div class="pagination"></div>
+                    <button class="control-btn button icon next">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 统计信息 -->
+        <section class="stats-section">
+            <div class="stats-grid container">
+                <div class="stat-card card">
+                    <div class="stat-icon">🎓</div>
+                    <div class="stat-number" data-target="2000">0</div>
+                    <div class="stat-label">在校学生</div>
+                </div>
+                <div class="stat-card card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number" data-target="158">0</div>
+                    <div class="stat-label">竞赛奖项</div>
+                </div>
+                <div class="stat-card card">
+                    <div class="stat-icon">👩🏫</div>
+                    <div class="stat-number" data-target="126">0</div>
+                    <div class="stat-label">教师团队</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 校长寄语 -->
+        <section class="principal-section container">
+            <div class="card greet-card">
+                <h2>校长寄语</h2>
+                <p>教育是点燃智慧的火种，我们致力于为每个学生提供最优质的教育资源，培养具有全球视野和创新精神的未来人才。</p>
+                <div class="signature">
+                    <img src="assets/images/signature.png" alt="校长签名">
+                    <p>张伟 校长</p>
+                </div>
+                <a href="team.html" class="button ghost">认识我们的团队</a>
+            </div>
+        </section>
+
+        <!-- 特色课程 -->
+        <section class="courses-section container">
+            <h2 class="section-title">特色课程体系</h2>
+            <div class="courses-grid">
+                <div class="course-card card">
+                    <div class="course-icon">🤖</div>
+                    <h3>人工智能基础</h3>
+                    <p>掌握机器学习核心概念，体验AI应用开发</p>
+                    <button class="course-detail-btn button">查看详情 →</button>
+                    <div class="course-detail">
+                        <ul>
+                            <li>适合年级：7-9年级</li>
+                            <li>课程时长：32课时</li>
+                            <li>授课方式：项目制学习</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="course-card card">
+                    <div class="course-icon">🧬</div>
+                    <h3>生物科技创新</h3>
+                    <p>探索基因工程与生物技术的前沿应用</p>
+                    <button class="course-detail-btn button outline">查看详情 →</button>
+                    <div class="course-detail">
+                        <ul>
+                            <li>适合年级：8-10年级</li>
+                            <li>课程时长：40课时</li>
+                            <li>授课方式：实验研究</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 校园动态 -->
+        <section class="news-section container">
+            <h2 class="section-title">校园动态</h2>
+            <div class="news-grid">
+                <div class="news-card card">
+                    <div class="news-image">
+                        <img src="assets/images/news1.jpg" alt="科技创新大赛">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-category">科技创新</span>
+                            <span class="news-date">2024-03-15</span>
+                        </div>
+                        <h3 class="news-title">科技创新大赛夺冠</h3>
+                        <p class="news-excerpt">我校团队自主研发的智能机器人项目荣获全国金奖...</p>
+                        <a href="#" class="news-link button ghost">阅读全文 →</a>
+                    </div>
+                </div>
+                <div class="news-card card">
+                    <div class="news-image">
+                        <img src="assets/images/news2.jpg" alt="春季运动会">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-category">校园活动</span>
+                            <span class="news-date">2024-03-10</span>
+                        </div>
+                        <h3 class="news-title">春季运动会圆满落幕</h3>
+                        <p class="news-excerpt">全校师生共同参与的春季运动会顺利举行，展现了青春活力...</p>
+                        <a href="#" class="news-link button ghost">阅读全文 →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="button-group" style="margin-top: 20px;">
+                <button class="button">加载更多</button>
+                <button class="button outline">查看全部</button>
+            </div>
+        </section>
+
+        <!-- 视频展示 -->
+        <section class="video-section container">
+            <h2 class="section-title">校园全景</h2>
+            <div class="video-container card">
+                <video class="campus-video" poster="assets/images/video-poster.jpg">
+                    <source src="assets/video/campus.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <button class="play-btn button icon">▶</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer-container">
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="assets/images/logo-white.svg" alt="校徽" width="60">
+                <p>未来科技中学</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>快速链接</h4>
+                    <a href="about.html" class="button ghost">学校简介</a>
+                    <a href="team.html" class="button ghost">师资力量</a>
+                    <a href="download.html" class="button ghost">招生简章</a>
+                </div>
+                <div class="link-column">
+                    <h4>联系我们</h4>
+                    <p>地址：北京市海淀区科技路123号</p>
+                    <p>电话：(010) 1234-5678</p>
+                    <p>邮箱：info@school.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 未来科技中学 版权所有<a href="admin/login.html" class="login-link">管理登录</a></p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

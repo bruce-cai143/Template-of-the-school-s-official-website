@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片墙 - 未来科技中学</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-container glass-effect">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.svg" alt="校徽" width="40"><img src="assets/images/logo.svg" alt="校徽" width="40"><img src="assets/images/logo.svg" alt="百人" width="40">
+                <span>未来科技中学</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html">学校介绍</a>
+                <a href="gallery.html" class="active">图片墙</a>
+                <a href="team.html">师资团队</a>
+                <a href="download.html">资料下载</a>
+                <a href="contact.html">关于</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="gallery-section container">
+            <h1 class="section-title">校园图集</h1>
+            <div class="upload-area card">
+                <input type="file" id="upload" multiple accept="image/*" hidden>
+                <label for="upload" class="upload-label">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <span>公开上传</span>
+                </label>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/gallery1.jpg" alt="校园活动">
+                    <div class="image-overlay">
+                        <button class="control-btn button icon next" >🔍</button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery2.jpg" alt="实验室">
+                    <div class="image-overlay">
+                        <button class="control-btn button icon next" >🔍</button>
+                    </div>
+                </div>
+                <!-- 更多图片项 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer-container">
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="assets/images/logo-white.svg" alt="校徽" width="60">
+                <p>未来科技中学</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>快速链接</h4>
+                    <a href="about.html">学校简介</a>
+                    <a href="team.html">师资力量</a>
+                    <a href="download.html">招生简章</a>
+                </div>
+                <div class="link-column">
+                    <h4>联系我们</h4>
+                    <p>地址：北京市海淀区科技路123号</p>
+                    <p>电话：(010) 1234-5678</p>
+                    <p>邮箱：info@school.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 未来科技中学 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

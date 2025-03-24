@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器测试</title>
+</head>
+<body>
+    <h1>服务器测试页面</h1>
+    <div id="result">测试结果将显示在这里...</div>
+    
+    <button id="testServer">测试服务器</button>
+    <button id="testDatabase">测试数据库</button>
+    
+    <script>
+        document.getElementById('testServer').addEventListener('click', async () => {
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = '正在测试服务器...';
+            
+            try {
+                const response = await fetch('/api/test');
+                const data = await response.json();
+                resultDiv.textContent = '服务器测试成功: ' + data.message;
+            } catch (error) {
+                resultDiv.textContent = '服务器测试失败: ' + error.message;
+            }
+        });
+        
+        document.getElementById('testDatabase').addEventListener('click', async () => {
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = '正在测试数据库...';
+            
+            try {
+                const response = await fetch('/api/test-db');
+                const data = await response.json();
+                resultDiv.textContent = '数据库测试结果: ' + data.message;
+            } catch (error) {
+                resultDiv.textContent = '数据库测试失败: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

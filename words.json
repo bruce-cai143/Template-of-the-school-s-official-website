@@ -1,0 +1,18 @@
+[
+    {
+        "image": "assets/images/news1.jpg",
+        "category": "科技创新",
+        "date": "2024-03-15",
+        "title": "科技创新大赛夺冠",
+        "excerpt": "我校团队自主研发的智能机器人项目荣获全国金奖...",
+        "link": "#"
+    },
+    {
+        "image": "assets/images/news2.jpg",
+        "category": "校园活动",
+        "date": "2024-03-10",
+        "title": "春季运动会圆满落幕",
+        "excerpt": "全校师生共同参与的春季运动会顺利举行，展现了青春活力...",
+        "link": "#"
+    }
+]
